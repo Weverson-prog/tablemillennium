@@ -1,27 +1,35 @@
 import { message, Typography } from "antd"
 import { ColumnsType } from "antd/es/table"
 import { useEffect, useState } from "react"
-import { ThemeProvider } from "styled-components"
-import "./App.css"
+import styled, { ThemeProvider } from "styled-components"
 import TableDefault from "./components/table"
-import { TProduct } from "./product"
-import { getProducts } from "./services/api"
+import { TProduct } from "./types"
 import { theme } from "./theme/theme"
+import axios from "axios"
+
+export const Cointainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  align-items: center;
+  @media ${({ theme }) => theme.devices.tablet} {
+  }
+`
 
 const { Text } = Typography
 
 function App() {
   const columns: ColumnsType<TProduct> = [
     {
-      title: "Produto",
-      dataIndex: "product",
-      key: "product"
-    },
-    {
       title: "Fases",
       dataIndex: "fases",
       key: "fases",
       children: [
+        {
+          title: "Produto",
+          dataIndex: "product",
+          key: "product"
+        },
         {
           title: "PCP",
           dataIndex: "PCP",
@@ -502,7 +510,14 @@ function App() {
 
     const fetchData = async () => {
       try {
-        const products = await getProducts
+        const products = await axios.get(
+          "https://mf1nrdrfd3.execute-api.sa-east-1.amazonaws.com/",
+          {
+            headers: {
+              "Access-Control-Allow-Origin": "*"
+            }
+          }
+        )
         console.log(products)
         const groupedRes = groupeByProdCode(products.data.value)
         const groupedResRenamed = renameKeys(groupedRes)
