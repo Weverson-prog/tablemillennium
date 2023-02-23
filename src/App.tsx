@@ -148,12 +148,12 @@ function App() {
 
       const nowDate = new Date(anoNow, mesNow, diaNow)
 
-      if (colDate.getTime() < nowDate.getTime()) {
+      if (colDate.getTime() > nowDate.getTime()) {
         return (
-          <Text type="danger"<{new Date(col).toLocaleDateString("pt-br")}</Text>
+          <Text >{new Date(col).toLocaleDateString("pt-br")}</Text>
         )
-      } else if (colDate.getTime() > nowDate.getTime()) {
-        return <Text>{new Date(dateDisplay).toLocaleDateString("pt-br")}</Text>
+      } else if (colDate.getTime() < nowDate.getTime()) {
+        return <Text type="danger">{new Date(dateDisplay).toLocaleDateString("pt-br")}</Text>
       } else if (colDate.getTime() === nowDate.getTime()) {
         return <Text>{new Date(dateDisplay).toLocaleDateString("pt-br")}</Text>
       }
