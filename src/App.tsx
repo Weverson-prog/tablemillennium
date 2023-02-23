@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components"
 import "./App.css"
 import TableDefault from "./components/table"
 import { TProduct } from "./product"
-import api from "./services/api"
+import { getProducts } from "./services/api"
 import { theme } from "./theme/theme"
 
 const { Text } = Typography
@@ -502,9 +502,9 @@ function App() {
 
     const fetchData = async () => {
       try {
-        // setProductData(prodTst);
-        const res = await api.get("")
-        const groupedRes = groupeByProdCode(res.data.value)
+        const products = await getProducts
+        console.log(products)
+        const groupedRes = groupeByProdCode(products.data.value)
         const groupedResRenamed = renameKeys(groupedRes)
         Object.keys(groupedResRenamed).map((prod: any) => {
           if (groupedResRenamed[prod]) {
