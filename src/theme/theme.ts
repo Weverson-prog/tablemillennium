@@ -1,15 +1,12 @@
-import { createGlobalStyle } from "styled-components";
-
-
-
+import { createGlobalStyle } from "styled-components"
 
 export const theme = {
   colors: {
     white: {
-      normal: "#FFFFFF",
+      normal: "#FFFFFF"
     },
     black: {
-      normal: "#000000",
+      normal: "#000000"
     },
     gray: {
       default: "#ededed",
@@ -17,14 +14,14 @@ export const theme = {
       normal: "#939598",
       dark: "#58595b",
       darker: "#121214",
-      header: "#454647",
+      header: "#454647"
     },
     green: {
       default: "#2AF6E3",
       darker: "#0E4D03",
       dark: "#02720C",
       normal: "#4cb967",
-      light: "#22CC4F",
+      light: "#22CC4F"
     },
     orange: {
       normal: "#F77F00"
@@ -48,7 +45,7 @@ export const theme = {
   },
   fonts: {
     primary: "Roboto, sans-serif",
-    secundary: "sans-serif;",
+    secundary: "sans-serif;"
   },
 
   fontSize: {
@@ -60,16 +57,16 @@ export const theme = {
     xlg: "2.625em",
     xxlg: "3.75em",
     xxxlg: "6.25em",
-    base: "16px",
+    base: "16px"
   },
   shadow: {
     vertical: "0px 3px 5px -1px rgba(0, 0, 0, 0.4)",
     bottomRight: "4px 4px 7px 0px rgba(0,0,0,0.4)",
-    black: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);",
+    black: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"
   },
   animation: {
     duration: "0.2s ease-in",
-    name: "animatetop",
+    name: "animatetop"
   },
   devices: {
     mobileS: `(max-width: 320px)`,
@@ -78,10 +75,10 @@ export const theme = {
     tablet: `(max-width: 1023px)`,
     laptop: `(min-width: 1024px)`,
     laptopL: `(max-width: 1440px)`,
-    desktop: `(max-width: 2560px)`,
+    desktop: `(max-width: 2560px)`
   },
-  siteWidth: `1140px`,
-};
+  siteWidth: `1140px`
+}
 
 export const ResetCss = createGlobalStyle`
 
@@ -202,4 +199,4 @@ export const ResetCss = createGlobalStyle`
     transform: translate3d(4px, 0, 0);
   }
 }
-`;
+`

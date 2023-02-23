@@ -1,11 +1,11 @@
-import React from "react";
-import * as Styled from "./styles";
-import { Table } from "antd";
+import React from "react"
+import * as Styled from "./styles"
+import { Table } from "antd"
 
 interface Props {
-  columns: any;
-  data: any[];
-  title?: string;
+  columns: any
+  data: any[]
+  title?: string
 }
 
 const TableDefault: React.FC<Props> = ({ columns, data, title }) => {
@@ -18,7 +18,7 @@ const TableDefault: React.FC<Props> = ({ columns, data, title }) => {
         </Styled.Table>
       </Styled.Cointainer>
     </>
-  );
-};
+  )
+}
 
-export default TableDefault;
+export default TableDefault
