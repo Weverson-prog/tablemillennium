@@ -511,14 +511,8 @@ function App() {
     const fetchData = async () => {
       try {
         const products = await axios.get(
-          "https://mf1nrdrfd3.execute-api.sa-east-1.amazonaws.com/",
-          {
-            headers: {
-              "Access-Control-Allow-Origin": "*"
-            }
-          }
+          "https://lli76r4rajt2eqe7zbris4v76m0dlizi.lambda-url.sa-east-1.on.aws/"
         )
-        console.log(products)
         const groupedRes = groupeByProdCode(products.data.value)
         const groupedResRenamed = renameKeys(groupedRes)
         Object.keys(groupedResRenamed).map((prod: any) => {
